@@ -4,9 +4,14 @@
 
 (enable-console-print!)
 
-(println "one =>" (hello-world.one/get-answer))
-(println "two =>" (hello-world.two/get-answer))
+(println "letfn one =>" (hello-world.one/get-answer-letfn))
+(println "letfn two =>" (hello-world.two/get-answer-letfn))
+
+(println "let one =>" (hello-world.one/get-answer-let))
+(println "let two =>" (hello-world.two/get-answer-let))
 
 (defn ^:export getAnswers []
- #js [(str "one => " (hello-world.one/get-answer))
-      (str "two => " (hello-world.two/get-answer))])
+ #js [(str "letfn one => " (hello-world.one/get-answer-letfn))
+      (str "letfn two => " (hello-world.two/get-answer-letfn))
+      (str "let one => " (hello-world.one/get-answer-let))
+      (str "let two => " (hello-world.two/get-answer-let))])

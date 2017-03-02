@@ -1,5 +1,9 @@
 (ns hello-world.one)
 
-(letfn [(answer [] "1")]
-  (defn get-answer []
-    (answer)))
+(letfn [(letfn-answer [] "1")]
+  (defn get-answer-letfn []
+    (letfn-answer)))
+
+(let [let-answer (fn [] "1")]
+  (defn get-answer-let []
+    (let-answer)))
